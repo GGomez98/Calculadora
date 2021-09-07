@@ -5,10 +5,37 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Calculadora</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sytle.css'>
     <script src='script.js' async type="text/javascript"></script>
 </head>
 <body>
-    
+    <div id="main-container">
+        <div id="calculator">
+            <div id="screen">
+                <input id="input-screen">
+            </div>
+                <div id="keyboard">
+                        <button class="operator keyboard-button" value="+">+</button>
+                        <button class="operator keyboard-button" value="-">-</button>
+                        <button class="operator keyboard-button" value="*">x</button>
+                        <button class="operator keyboard-button" value="/">/</button>
+                        <br>
+                        <button class="number keyboard-button" value="1">1</button>
+                        <button class="number keyboard-button" value="2">2</button>
+                        <button class="number keyboard-button" value="3">3</button>
+                        <button class="number keyboard-button" value="4">4</button>
+                        <br>
+                        <button class="number keyboard-button" value="5">5</button>
+                        <button class="number keyboard-button" value="6">6</button>
+                        <button class="number keyboard-button" value="7">7</button>
+                        <button class="number keyboard-button" value="8">8</button>
+                        <br>
+                        <button class="number keyboard-button" value="0">0</button>
+                        <button class="number keyboard-button" value="9">9</button>
+                        <button class='keyboard-button' id="clear">C</button>
+                        <button class='keyboard-button' id='equal'>=</button>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
