@@ -22,12 +22,7 @@ function addNumber(number){
 
 NUMBER.forEach(button =>{
     button.addEventListener('click', (e)=>{
-        if (operator==undefined&&result!=''){
-            num1 = ''
-            addNumber(button.value)
-            INPUT.textContent = num1
-        }
-        else if(operator==undefined){
+        if(operator==undefined){
             addNumber(button.value)
             INPUT.textContent = num1
         }
