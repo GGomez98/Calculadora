@@ -8,7 +8,6 @@ const OPERATOR = document.querySelectorAll('.operator')
 let num1 = ''
 let num2 = ''
 let operator = undefined
-let result = ''
 
 //this function adds a number to the string
 function addNumber(number){
@@ -64,6 +63,7 @@ function divide(a,b){
     return parseFloat(a)/parseFloat(b)
 }
 
+//calculates the total
 function calculate(op){
     switch(op){
         case '+':
