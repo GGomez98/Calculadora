@@ -25,15 +25,15 @@ NUMBER.forEach(button =>{
         if (operator==undefined&&result!=''){
             num1 = ''
             addNumber(button.value)
-            INPUT.value = num1
+            INPUT.textContent = num1
         }
         else if(operator==undefined){
             addNumber(button.value)
-            INPUT.value = num1
+            INPUT.textContent = num1
         }
         else{
             addNumber(button.value)
-            INPUT.value = num2
+            INPUT.textContent = num2
         }
     })
 })
@@ -44,12 +44,12 @@ OPERATOR.forEach(button =>{
         if(operator!=undefined){
             num1 = calculate(operator)
             num2 = ''
-            INPUT.value = num1
+            INPUT.textContent = num1
             operator = button.textContent
         }
         else{
         operator = button.textContent
-        INPUT.value = operator
+        INPUT.textContent = operator
         }
     })
 })
@@ -60,7 +60,7 @@ function clearAll(){
     num2 = ''
     operator = undefined
     result = ''
-    INPUT.value = ''
+    INPUT.textContent = ''
 }
 
 CLEAR_BUTTON.addEventListener('click', clearAll)
@@ -104,16 +104,16 @@ function calculate(op){
 
 EQUAL_BUTTON.addEventListener('click',()=>{
     if(operator==undefined||num1==''||num2==''){
-        INPUT.value = 'SYNTAX ERROR'
+        INPUT.textContent = 'SYNTAX ERROR'
     }
     else{
     calculate(operator)
     num1 = result
     if(result.toString().length > 11){
-        INPUT.value = result.toFixed(10)
+        INPUT.textContent = result.toFixed(10)
     }
     else{
-    INPUT.value = result
+    INPUT.textContent = result
     }
     num2 = ''
     operator = undefined

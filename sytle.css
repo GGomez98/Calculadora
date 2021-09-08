@@ -31,8 +31,11 @@
 #input-screen{
     height: 80%;
     width: 90%;
-    text-align: end;
     font-size: xx-large;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #keyboard{
