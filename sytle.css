@@ -58,3 +58,39 @@
     background-color: rgb(157, 227, 255);
     cursor: pointer;
 }
+
+@media (max-width: 1366px){
+    #calculator{
+        width: 25%
+    }
+}
+
+@media (max-width: 1025px){
+    #calculator{
+        width: 50%
+    }
+    #input-screen{
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 415px){
+    #calculator{
+        width: 80%
+    }
+    #input-screen{
+        font-size: xx-large;
+    }
+}
+
+@media (max-height: 768px){
+    #calculator{
+        height: 70%;
+        width: 50%;
+}
+
+@media (max-height: 375px) and (max-width: 812px){
+    #calculator{
+        height: 80%;
+        width: 40%;
+}
