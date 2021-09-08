@@ -31,6 +31,8 @@
 #input-screen{
     height: 80%;
     width: 90%;
+    text-align: end;
+    font-size: xx-large;
 }
 
 #keyboard{
@@ -49,11 +51,10 @@
     margin: 0% 2%;
     border: none;
     font-size: x-large;
-    transition: background-color 500ms ease-in;
 }
 
 
 .keyboard-button:hover{
     background-color: rgb(157, 227, 255);
-    transition: all 500ms ease;
+    cursor: pointer;
 }
