@@ -109,7 +109,12 @@ EQUAL_BUTTON.addEventListener('click',()=>{
     else{
     calculate(operator)
     num1 = result
+    if(result.toString().length > 11){
+        INPUT.value = result.toFixed(10)
+    }
+    else{
     INPUT.value = result
+    }
     num2 = ''
     operator = undefined
     }
