@@ -8,6 +8,7 @@ const OPERATOR = document.querySelectorAll('.operator')
 let num1 = ''
 let num2 = ''
 let operator = undefined
+let result = ''
 
 //this function adds a number to the string
 function addNumber(number){
@@ -21,11 +22,17 @@ function addNumber(number){
 
 NUMBER.forEach(button =>{
     button.addEventListener('click', (e)=>{
-        addNumber(button.value)
-        if(operator==undefined){
+        if (operator==undefined&&result!=''){
+            num1 = ''
+            addNumber(button.value)
+            INPUT.value = num1
+        }
+        else if(operator==undefined){
+            addNumber(button.value)
             INPUT.value = num1
         }
         else{
+            addNumber(button.value)
             INPUT.value = num2
         }
     })
@@ -34,8 +41,16 @@ NUMBER.forEach(button =>{
 //adds an operator
 OPERATOR.forEach(button =>{
     button.addEventListener('click', (e)=>{
+        if(operator!=undefined){
+            num1 = calculate(operator)
+            num2 = ''
+            INPUT.value = num1
+            operator = button.textContent
+        }
+        else{
         operator = button.textContent
         INPUT.value = operator
+        }
     })
 })
 
@@ -60,31 +75,42 @@ function multiply(a,b){
     return parseFloat(a)*parseFloat(b)
 }
 function divide(a,b){
+    if (b==0){
+        return 'SYNTAX ERROR'
+    }
+    else{
     return parseFloat(a)/parseFloat(b)
+    }
 }
 
 //calculates the total
 function calculate(op){
     switch(op){
         case '+':
-            num1 = add(num1,num2)
+            result = add(num1,num2)
             break;
         case '-':
-            num1 = substract(num1,num2)
+            result = substract(num1,num2)
             break;
         case 'x':
-            num1 = multiply(num1,num2)
+            result = multiply(num1,num2)
             break;
         case '/':
-            num1 = divide(num1,num2)
+            result = divide(num1,num2)
             break;
     }
-    return num1
+    return result
 }
 
 EQUAL_BUTTON.addEventListener('click',()=>{
+    if(operator==undefined||num1==''||num2==''){
+        INPUT.value = 'SYNTAX ERROR'
+    }
+    else{
     calculate(operator)
-    INPUT.value = num1
+    num1 = result
+    INPUT.value = result
     num2 = ''
     operator = undefined
+    }
 })
