@@ -4,7 +4,6 @@
 }
 
 #main-container{
-    border: black solid 1px;
     height: 99.8vh;
     display: flex;
     align-items: center;
