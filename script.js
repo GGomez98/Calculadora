@@ -22,17 +22,23 @@ function addNumber(number){
 
 NUMBER.forEach(button =>{
     button.addEventListener('click', (e)=>{
-        if(operator==undefined&&result!=''){
+        if(operator==undefined&&result!=''&&num1.length<13){
             clearAll()
             addNumber(button.value)
             INPUT.textContent = num1
         }
-        else if(operator==undefined){
+        else if(operator==undefined&&num1.length<13){
             addNumber(button.value)
             INPUT.textContent = num1
         }
-        else{
+        else if(num2.length<13&&operator!=undefined){
             addNumber(button.value)
+            INPUT.textContent = num2
+        }
+        else if(operator==undefined){
+            INPUT.textContent = num1
+        }
+        else{
             INPUT.textContent = num2
         }
     })
@@ -54,7 +60,7 @@ OPERATOR.forEach(button =>{
     })
 })
 
-//cleans all information on variables num1, num2, operator and result
+//cleans all information on variables num1, num2, operator and result. Also cleans the input
 function clearAll(){
     num1 = ''
     num2 = ''
@@ -109,8 +115,8 @@ EQUAL_BUTTON.addEventListener('click',()=>{
     else{
     calculate(operator)
     num1 = result
-    if(result.toString().length > 11){
-        INPUT.textContent = result.toFixed(10)
+    if(result.toString().length > 13){
+        INPUT.textContent = result.toString().slice(0,13) + 'E'
     }
     else{
     INPUT.textContent = result
